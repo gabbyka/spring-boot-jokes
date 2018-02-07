@@ -13,7 +13,7 @@ public class JokesController {
     @Autowired
     private ChuckService chuckService;
 
-    @RequestMapping("/jokes")
+    @RequestMapping({"/", ""})
     public String getJokes(Model model) {
         model.addAttribute("joke", chuckService.getJoke());
         return "jokes";
