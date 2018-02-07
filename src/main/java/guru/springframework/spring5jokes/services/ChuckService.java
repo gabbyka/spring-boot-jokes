@@ -1,11 +1,21 @@
 package guru.springframework.spring5jokes.services;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import guru.springframework.norris.chuck.ChuckNorrisQuotes;
 
 @Service
 public class ChuckService {
-    
-    //@Autowired
-    //private ChuckNorrisQuotes chuckNorrisQuotes;
+
+    private ChuckNorrisQuotes chuckNorrisQuotes;
+
+    public ChuckService() {
+        super();
+        this.chuckNorrisQuotes = new ChuckNorrisQuotes();
+    }
+
+    public String getJoke() {
+        return chuckNorrisQuotes.getRandomQuote();
+    }
+
 }
